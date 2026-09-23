@@ -1,0 +1,119 @@
+name: hard_negative_48k_item_coverage
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+output_root: 'N:\Program Files\map'
+base_dataset: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_player_1280x224\comprehensive_60k_2class'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\index_1.14.4'
+seed: 83
+image: {width: 1280, height: 224}
+jpeg_quality: 88
+label_players: true
+class_names: [monster, player]
+map_range: [100000000, 199999999]
+splits: {train: 38400, val: 4800, test: 4800}
+minimum_clip_fraction: 0.30
+minimum_visible_fraction: 0.30
+item_coverage: true
+item_visual_count: 7296
+item_coverage_reserve_per_split: 3000
+item_index_source: 'N:\Program Files\map\hard_negative_48k_item_coverage\item_visual_index.json'
+map_geometry_source: 'N:\Program Files\map\hard_negative_48k_item_coverage\map_geometry_index.json'
+
+box_quotas:
+  0: 22000
+  1: 3000
+  2: 3000
+  3: 3000
+  4: 2500
+  5: 2500
+  6: 2000
+  7: 2000
+  8: 2000
+  9: 1000
+  10: 1000
+  11: 1000
+  12: 1000
+  13: 400
+  14: 400
+  15: 400
+  16: 400
+  17: 100
+  18: 100
+  19: 100
+  20: 100
+
+player_quotas: {0: 32000, 1: 12000, 2: 3000, 3: 1000}
+
+loot_count_quotas:
+  1: 8000
+  2: 5000
+  3: 5000
+  4: 3000
+  5: 3000
+  6: 3000
+  7: 1750
+  8: 1750
+  9: 1750
+  10: 1750
+  11: 800
+  12: 800
+  13: 800
+  14: 800
+  15: 800
+  16: 400
+  17: 400
+  18: 400
+  19: 400
+  20: 400
+
+loot_layout_quotas:
+  scattered: 14000
+  small_piles: 14000
+  multi_pile: 8000
+  dense_stack: 4000
+
+target_layout_weights:
+  '1-3': {distributed: 0.65, clustered: 0.25, overlap: 0.10}
+  '4-8': {distributed: 0.40, clustered: 0.40, overlap: 0.20}
+  '9-12': {distributed: 0.20, clustered: 0.45, overlap: 0.35}
+  '13-20': {distributed: 0.10, clustered: 0.35, severe_overlap: 0.55}
+multi_platform_fraction: 0.20
+
+scenarios:
+  negative_loot_sparse: {count: 3000, positive: false, min_players: 0, max_players: 0, min_loot: 1, max_loot: 3, overlays: [], required_overlays: [loot]}
+  negative_loot_dense: {count: 3000, positive: false, min_players: 0, max_players: 0, min_loot: 7, max_loot: 20, overlays: [], required_overlays: [loot]}
+  negative_meso_mixed: {count: 2000, positive: false, min_players: 0, max_players: 0, min_loot: 2, max_loot: 10, overlays: [], required_overlays: [loot]}
+  negative_pet: {count: 1200, positive: false, min_players: 0, max_players: 0, min_loot: 0, max_loot: 0, overlays: [pet], min_pets: 1, max_pets: 3, required_overlays: [pet]}
+  negative_pet_loot: {count: 1800, positive: false, min_players: 0, max_players: 0, min_loot: 1, max_loot: 10, overlays: [pet], min_pets: 1, max_pets: 3, required_overlays: [pet, loot]}
+  negative_lookalike: {count: 1000, positive: false, min_players: 0, max_players: 0, min_loot: 0, max_loot: 0, overlays: []}
+  negative_death_loot: {count: 1000, positive: false, min_players: 0, max_players: 0, min_loot: 1, max_loot: 10, overlays: [skill, damage], death: true, death_count: 5, required_overlays: [death, loot]}
+  negative_transition_ui: {count: 1000, positive: false, min_players: 0, max_players: 0, min_loot: 0, max_loot: 0, overlays: [], transition: true}
+
+  player_loot: {count: 3000, positive: false, min_players: 1, max_players: 3, min_loot: 1, max_loot: 10, overlays: [], required_overlays: [loot]}
+  player_pet_loot: {count: 2000, positive: false, min_players: 1, max_players: 3, min_loot: 1, max_loot: 10, overlays: [pet], min_pets: 1, max_pets: 3, required_overlays: [pet, loot]}
+  player_skill_summon_damage: {count: 1800, positive: false, min_players: 1, max_players: 3, min_loot: 0, max_loot: 0, overlays: [skill, damage], required_overlays: [skill, damage]}
+  player_mixed_clutter: {count: 1200, positive: false, min_players: 1, max_players: 3, min_loot: 1, max_loot: 15, overlays: [pet, skill, damage], min_pets: 1, max_pets: 2, required_overlays: [pet, loot]}
+
+  monster_loot_scattered: {count: 6000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 0, min_loot: 1, max_loot: 10, overlays: [], required_overlays: [loot]}
+  monster_dense_loot: {count: 4000, positive: true, min_instances: 2, max_instances: 20, min_players: 0, max_players: 0, min_loot: 7, max_loot: 20, overlays: [], required_overlays: [loot]}
+  monster_pet: {count: 2000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 0, min_loot: 0, max_loot: 0, overlays: [pet], min_pets: 1, max_pets: 3, required_overlays: [pet]}
+  monster_combat_loot: {count: 3000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 0, min_loot: 1, max_loot: 15, overlays: [skill, damage], required_overlays: [loot]}
+  monster_edge_clutter: {count: 2000, positive: true, min_instances: 1, max_instances: 8, min_players: 0, max_players: 0, min_loot: 1, max_loot: 10, overlays: [pet, skill], min_pets: 1, max_pets: 2, edge_or_occlusion: true, force_target_overlap: true, required_overlays: [loot]}
+  monster_lookalike: {count: 1000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 0, min_loot: 0, max_loot: 0, overlays: []}
+
+  monster_player_loot: {count: 4000, positive: true, min_instances: 1, max_instances: 20, min_players: 1, max_players: 3, min_loot: 1, max_loot: 20, overlays: [], required_overlays: [loot]}
+  dense_monster_player_pet_loot: {count: 2500, positive: true, min_instances: 2, max_instances: 20, min_players: 1, max_players: 3, min_loot: 1, max_loot: 20, overlays: [pet], min_pets: 1, max_pets: 3, required_overlays: [pet, loot]}
+  edge_occlusion_mixed: {count: 1500, positive: true, min_instances: 1, max_instances: 8, min_players: 1, max_players: 3, min_loot: 1, max_loot: 10, overlays: [pet, skill, damage], min_pets: 1, max_pets: 2, edge_or_occlusion: true, force_target_overlap: true, required_overlays: [loot]}
+
+action_weights: {stand: 0.25, move: 0.25, attack: 0.18, hit: 0.12, skill: 0.10, jump: 0.07, fly: 0.03}
+minimum_mob_boxes: 500
+minimum_frame_uses: 20
+minimum_death_frame_uses: 10
+minimum_player_boxes: 16000
+minimum_item_train_uses: 12
+minimum_item_val_uses: 4
+minimum_item_test_uses: 4
+visual_checks: 2100
+resource_cache: 384
+map_cache: 32
+max_attempts: 300
+minimum_free_gb: 5

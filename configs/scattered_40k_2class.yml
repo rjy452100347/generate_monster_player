@@ -1,0 +1,19 @@
+name: scattered_monster_player_40k
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\preview_index_1.15.2'
+output_root: 'M:\Program Files\mxd\数据集'
+map_selection: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_player_1280x224\comprehensive_60k_2class\map_selection.json'
+seed: 20260920
+image: {width: 1280, height: 224}
+jpeg_quality: 92
+class_names: [monster, player]
+splits: {train: 32000, val: 4000, test: 4000}
+scenarios: {player_pet_monster: 28000, player_monster: 6000, player_pet: 3200, monster: 2000, background: 800}
+monster_quotas: {1: 6000, 2: 10000, 3: 10000, 4: 6000, 5: 4000}
+two_pet_images: 6400
+player_catalog_size: 512
+visual_checks_per_split_scenario: 20
+max_attempts: 800
+resource_cache: 384
+minimum_free_gb: 8
+

@@ -1,0 +1,75 @@
+name: comprehensive_60k_2class
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+output_root: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_player_1280x224'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\index_1.14.2'
+seed: 83
+image: {width: 1280, height: 224}
+jpeg_quality: 88
+label_players: true
+class_names: [monster, player]
+map_range: [100000000, 199999999]
+splits: {train: 48000, val: 6000, test: 6000}
+box_quotas:
+  0: 12000
+  1: 6000
+  2: 6000
+  3: 5400
+  4: 4800
+  5: 4200
+  6: 3600
+  7: 2400
+  8: 2400
+  9: 1800
+  10: 1800
+  11: 1080
+  12: 1080
+  13: 1080
+  14: 1080
+  15: 1080
+  16: 840
+  17: 840
+  18: 840
+  19: 840
+  20: 840
+player_quotas:
+  0: 24000
+  1: 27000
+  2: 6000
+  3: 1800
+  4: 900
+  5: 300
+scenarios:
+  natural_sparse: {count: 12000, positive: true, min_instances: 1, max_instances: 3, min_players: 0, max_players: 5}
+  natural_standard: {count: 10000, positive: true, min_instances: 4, max_instances: 8, min_players: 0, max_players: 5}
+  multi_platform: {count: 5000, positive: true, min_instances: 2, max_instances: 20, min_players: 0, max_players: 5}
+  dense_moderate: {count: 5000, positive: true, min_instances: 6, max_instances: 15, min_players: 0, max_players: 5}
+  dense_extreme: {count: 3000, positive: true, min_instances: 10, max_instances: 20, min_players: 0, max_players: 5}
+  edge_crop: {count: 3000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 5}
+  foreground_occlusion: {count: 3000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 5}
+  size_extreme: {count: 3000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 5}
+  rare_action: {count: 3000, positive: true, min_instances: 1, max_instances: 20, min_players: 0, max_players: 5}
+  flying_jump: {count: 1000, positive: true, min_instances: 1, max_instances: 8, min_players: 0, max_players: 5}
+  negative_empty: {count: 3000, positive: false, min_players: 0, max_players: 0}
+  negative_actor: {count: 2000, positive: false, min_players: 1, max_players: 3}
+  negative_combat: {count: 2000, positive: false, min_players: 0, max_players: 2}
+  negative_death: {count: 2000, positive: false, min_players: 0, max_players: 0}
+  negative_lookalike: {count: 1500, positive: false, min_players: 0, max_players: 0}
+  negative_lighting: {count: 1000, positive: false, min_players: 0, max_players: 1}
+  negative_transition: {count: 500, positive: false, min_players: 0, max_players: 0}
+action_weights:
+  stand: 0.25
+  move: 0.25
+  attack: 0.18
+  hit: 0.12
+  skill: 0.10
+  jump: 0.07
+  fly: 0.03
+minimum_mob_boxes: 1000
+minimum_frame_uses: 50
+minimum_death_frame_uses: 20
+minimum_player_boxes: 49500
+visual_checks: 500
+resource_cache: 384
+map_cache: 32
+max_attempts: 240
+minimum_free_gb: 5

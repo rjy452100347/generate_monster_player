@@ -1,0 +1,28 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local reverse-engineering tools, client extracts and generated output.
+work/
+tools/
+logs/
+datasets/
+outputs/
+*.log
+*.bundle
+*.exe
+*.dll
+*.pdb
+
+# Python build products and editor/OS files.
+build/
+dist/
+*.egg-info/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

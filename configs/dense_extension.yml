@@ -1,0 +1,21 @@
+name: dense_extension
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+output_root: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_1280x224'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\index_1.14.2'
+seed: 84
+image:
+  width: 1280
+  height: 224
+map_range: [100000000, 199999999]
+map_selection_from: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_1280x224\pilot\map_selection.json'
+combine_with: pilot
+splits:
+  train: 1600
+  val: 200
+  test: 200
+sampling:
+  positive: 0.65
+  dense: 0.35
+instances:
+  min: 1
+  max: 20

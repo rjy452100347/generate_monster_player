@@ -1,0 +1,13 @@
+name: scattered_preview_100
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\preview_index_1.15.2'
+output_root: 'N:\Program Files\map'
+map_selection: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_player_1280x224\comprehensive_60k_2class\map_selection.json'
+seed: 20260920
+image: {width: 1280, height: 224}
+class_names: [monster, player]
+scenarios: {player_pet_monster: 70, player_monster: 15, player_pet: 8, monster: 5, background: 2}
+monster_quotas: {1: 15, 2: 25, 3: 25, 4: 15, 5: 10}
+two_pet_images: 16
+player_catalog_size: 64
+max_attempts: 600

@@ -1,0 +1,70 @@
+name: comprehensive_60k
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+output_root: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_1280x224'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\index_1.14.2'
+seed: 83
+image:
+  width: 1280
+  height: 224
+jpeg_quality: 88
+map_range: [100000000, 199999999]
+splits:
+  train: 48000
+  val: 6000
+  test: 6000
+box_quotas:
+  0: 12000
+  1: 6000
+  2: 6000
+  3: 5400
+  4: 4800
+  5: 4200
+  6: 3600
+  7: 2400
+  8: 2400
+  9: 1800
+  10: 1800
+  11: 1080
+  12: 1080
+  13: 1080
+  14: 1080
+  15: 1080
+  16: 840
+  17: 840
+  18: 840
+  19: 840
+  20: 840
+scenarios:
+  natural_sparse: {count: 12000, positive: true, min_instances: 1, max_instances: 3}
+  natural_standard: {count: 10000, positive: true, min_instances: 4, max_instances: 8}
+  multi_platform: {count: 5000, positive: true, min_instances: 2, max_instances: 20}
+  dense_moderate: {count: 5000, positive: true, min_instances: 6, max_instances: 15}
+  dense_extreme: {count: 3000, positive: true, min_instances: 10, max_instances: 20}
+  edge_crop: {count: 3000, positive: true, min_instances: 1, max_instances: 20}
+  foreground_occlusion: {count: 3000, positive: true, min_instances: 1, max_instances: 20}
+  size_extreme: {count: 3000, positive: true, min_instances: 1, max_instances: 20}
+  rare_action: {count: 3000, positive: true, min_instances: 1, max_instances: 20}
+  flying_jump: {count: 1000, positive: true, min_instances: 1, max_instances: 8}
+  negative_empty: {count: 3000, positive: false}
+  negative_actor: {count: 2000, positive: false}
+  negative_combat: {count: 2000, positive: false}
+  negative_death: {count: 2000, positive: false}
+  negative_lookalike: {count: 1500, positive: false}
+  negative_lighting: {count: 1000, positive: false}
+  negative_transition: {count: 500, positive: false}
+action_weights:
+  stand: 0.25
+  move: 0.25
+  attack: 0.18
+  hit: 0.12
+  skill: 0.10
+  jump: 0.07
+  fly: 0.03
+minimum_mob_boxes: 1000
+minimum_frame_uses: 50
+minimum_death_frame_uses: 20
+visual_checks: 500
+resource_cache: 384
+map_cache: 32
+max_attempts: 160
+minimum_free_gb: 5

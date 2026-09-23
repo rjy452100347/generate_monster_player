@@ -1,0 +1,7 @@
+client_root: 'D:\Program Files\上海数龙科技有限公司\冒险岛online\mxdclassic'
+cache_dir: 'F:\MapleStoryAssets\.classic_cache\index_1.14.2'
+output: 'F:\MapleStoryAssets\datasets\mxdclassic_monster_1280x224\coverage_audit.json'
+map_ranges:
+  - [0, 899999999]
+exclude_map_prefixes:
+  - '9'
